@@ -2,8 +2,8 @@
 
 > **"영역을 가리지 않는 탐구심으로 서비스의 궤적을 직접 그려냅니다."**
 
-### 🔗 Live Portfolio
-**[👉 가연의 포트폴리오 웹사이트 방문하기](https://gayeoniee.github.io/gayeon-portfolio/)**
+### 🔗 Portfolio
+**[👉포트폴리오 웹사이트 방문하기](https://gayeoniee.github.io/gayeon-portfolio/)**
 
 ---
 
