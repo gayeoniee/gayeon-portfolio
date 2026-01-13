@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Projects | Hong Gayeon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { "primary": "#3f8857", "point": "#f97316", "bg-light": "#fdfdfc" }, fontFamily: { "display": ["Manrope", "sans-serif"] } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Manrope', sans-serif; letter-spacing: -0.015em; word-break: keep-all; }
+        
+        /* 프로젝트 아코디언 인터랙션 */
+        .accordion-content { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .accordion-item.active .accordion-content { max-height: 1200px; opacity: 1; padding-top: 2rem; }
+        .accordion-item.active .card-box { border-color: #3f8857; background: white; box-shadow: 0 15px 30px -10px rgba(63, 136, 87, 0.15); }
+        .accordion-item.active .toggle-icon { transform: rotate(180deg); color: #3f8857; }
+    </style>
+</head>
+<body class="bg-bg-light text-[#111713] antialiased">
+    <header class="sticky top-0 z-50 flex items-center justify-between border-b border-[#eaf0ec] bg-white/80 backdrop-blur-md px-10 py-3 lg:px-40">
+        <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center size-9 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined text-lg">eco</span></div>
+            <h2 class="text-lg font-extrabold tracking-tight">Hong Gayeon</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase">
+            <a class="hover:text-primary transition-colors" href="index.html">Intro</a>
+            <a class="hover:text-primary transition-colors" href="experience.html">Experience</a>
+            <a class="text-primary border-b-2 border-primary pb-1" href="projects.html">Project</a>
+            <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </nav>
+        <button class="bg-primary text-white px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm">Resume</button>
+    </header>
+
+    <main class="px-6 lg:px-40 py-12 lg:py-20 max-w-[1100px] mx-auto w-full">
+        <header class="mb-16">
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 bg-primary/10 text-primary rounded-full w-fit text-[10px] font-bold uppercase tracking-widest mb-4">
+                <span class="material-symbols-outlined text-[14px]">rocket_launch</span> Selected Works
+            </div>
+            <h1 class="text-3xl lg:text-5xl font-black tracking-tight text-slate-900 italic">
+                Engineering <span class="text-primary">Logic & Muscles.</span>
+            </h1>
+        </header>
+
+        <div class="flex flex-col gap-6">
+            
+            <div class="accordion-item active group">
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-3">
+                                <h3 class="text-2xl font-black text-slate-900">COOKUS: 프로젝트 리더</h3>
+                                <span class="px-2.5 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase">Leadership</span>
+                            </div>
+                            <p class="text-slate-400 font-bold text-sm tracking-tight">Full-Stack Development & CI/CD Optimization</p>
+                        </div>
+                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                    </div>
+
+                    <div class="accordion-content">
+                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
+                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] shadow-sm">
+                                <img src="docs/cookus.png" alt="COOKUS" class="w-full h-auto object-cover">
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
+                                    Project Lead로서 팀의 방향성을 제시하고, <strong>프론트엔드 전체 개발</strong>부터 <strong>CI/CD 자동화 구축</strong>까지 제품의 전 생애주기를 직접 책임졌습니다. 
+                                    Docker와 GitHub Actions를 활용해 기존 20분 이상의 배포 시간을 3분으로 단축하여 개발 생산성을 85% 이상 개선했습니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#Frontend_Lead</span>
+                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#CI/CD_Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item group">
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-3">
+                                <h3 class="text-2xl font-black text-slate-900">사과 병해충 분류 모델링</h3>
+                                <span class="px-2.5 py-0.5 bg-point/10 text-point text-[10px] font-bold rounded-full uppercase">Grand Prize</span>
+                            </div>
+                            <p class="text-slate-400 font-bold text-sm tracking-tight">Deep Learning & Computer Vision</p>
+                        </div>
+                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                    </div>
+
+                    <div class="accordion-content">
+                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
+                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] shadow-sm bg-slate-900">
+                                <img src="docs/ai.png" alt="Apple AI" class="w-full h-auto object-cover opacity-90">
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
+                                    노이즈가 심한 사과 병해충 이미지 데이터셋에서 <strong>최종 정확도 0.982</strong>를 달성하여 교내 AI 경진대회 최우수상을 수상했습니다. 
+                                    3개 모델의 앙상블 기법과 리더 모델을 보완하는 독자적인 <strong>부활 로직(Revival Logic)</strong>을 직접 고안하여 기술적 한계를 극복했습니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#Ensemble</span>
+                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#PyTorch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item group">
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-2xl font-black text-slate-900">Tooktook: 지능형 상담 지원</h3>
+                            <p class="text-slate-400 font-bold text-sm tracking-tight">RAG Architecture & Data Engineering</p>
+                        </div>
+                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
+                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] bg-[#f8faf9] p-4">
+                                <img src="docs/tooktook.png" alt="Tooktook" class="w-full h-auto object-contain">
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
+                                    수시로 개정되는 정책 데이터를 실시간으로 수집하는 파이프라인을 구축하고, 답변 정확도를 높이기 위한 <strong>문단 단위 청킹 전략</strong>을 직접 설계했습니다. 
+                                    RAG 아키텍처의 효용성을 입증하며 실제 상담 현장에서의 기술적 의사결정 최적화를 이뤄냈습니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#RAG</span>
+                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#Data_Pipeline</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item group">
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-2xl font-black text-slate-900">Agentic RAG 와인 추천</h3>
+                            <p class="text-slate-400 font-bold text-sm tracking-tight">Personalization & AI Agent Design</p>
+                        </div>
+                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
+                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] shadow-sm">
+                                <img src="docs/wine.png" alt="Wine" class="w-full h-auto object-cover">
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
+                                    사용자의 모호한 취향 데이터를 기반으로 최적의 와인을 제안하는 <strong>에이전틱 RAG 기반 개인화 추천 시스템</strong>입니다. 
+                                    사용자 피드백을 실시간으로 반영하여 추천의 정교함을 높이는 로직을 설계했습니다.
+                                </p>
+                                <div class="flex flex-wrap gap-2 text-primary font-bold text-[11px]">
+                                    #Personalization #LLM_Agent
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+            
+            if (!isActive) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

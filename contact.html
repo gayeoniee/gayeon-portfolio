@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact | Hong Gayeon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { "primary": "#3f8857", "bg-light": "#fdfdfc" } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Manrope', sans-serif; letter-spacing: -0.015em; word-break: keep-all; }
+        .contact-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #eaf0ec; height: auto; }
+        .contact-card:hover { border-color: #3f8857; transform: translateY(-4px); }
+        .no-wrap { white-space: nowrap; }
+    </style>
+</head>
+<body class="bg-bg-light text-[#111713] antialiased">
+    <header class="sticky top-0 z-50 flex items-center justify-between border-b border-[#eaf0ec] bg-white/80 backdrop-blur-md px-10 py-3 lg:px-40">
+        <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center size-9 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined text-lg">eco</span></div>
+            <h2 class="text-lg font-extrabold tracking-tight">Hong Gayeon</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase">
+            <a class="hover:text-primary transition-colors" href="index.html">Intro</a>
+            <a class="hover:text-primary transition-colors" href="experience.html">Experience</a>
+            <a class="hover:text-primary transition-colors" href="projects.html">Project</a>
+            <a class="text-primary border-b-2 border-primary pb-1" href="contact.html">Contact</a>
+        </nav>
+        <button class="bg-primary text-white px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm">Resume</button>
+    </header>
+
+    <main class="px-6 lg:px-40 py-12 lg:py-24 max-w-[1200px] mx-auto w-full">
+        <header class="mb-16">
+            <h1 class="text-4xl lg:text-5xl font-black mb-8 italic text-primary tracking-tighter leading-[1.0]">
+                Engineering the Answers.
+            </h1>
+            <div class="flex flex-col gap-6 max-w-2xl">
+                <p class="text-[#62846d] text-base lg:text-lg leading-relaxed font-medium">
+                    저는 서비스의 탄생부터 유저의 손에 닿는 순간까지 그 모든 생애주기를 직접 경험하며 성장하는 올라운더입니다. 
+                    '이것저것 해보고 싶다'라는 말 뒤에는 팀의 결과물이 최고의 가치를 가질 수 있도록 
+                    무엇이든 배우고 해내겠다는 뜨거운 열정이 숨어 있습니다. 
+                    조용하지만 강한 실행력으로 팀의 성장을 견인하고 함께 정점을 찍어보고 싶은 욕심이 있는 사람입니다.
+                </p>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="md:col-span-2 contact-card bg-white rounded-3xl p-8 lg:p-12 shadow-sm flex flex-col justify-center relative overflow-hidden group min-h-[160px]">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Primary Contact</p>
+                <h2 class="text-xl lg:text-[28px] font-black text-primary break-all group-hover:text-slate-900 transition-colors">
+                    hong52321579@gmail.com
+                </h2>
+                <span class="material-symbols-outlined absolute -bottom-6 -right-6 text-[140px] opacity-[0.03] group-hover:rotate-12 transition-transform">database</span>
+            </div>
+
+            <a href="https://github.com/gayeoniee" target="_blank" class="contact-card bg-white rounded-3xl p-8 lg:p-10 shadow-sm flex flex-col justify-center hover:bg-slate-50 min-h-[160px]">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Code Archive</p>
+                <p class="text-lg font-bold text-slate-900">github.com/gayeoniee</p>
+            </a>
+
+            <a href="https://www.threads.net/@archive.data_" target="_blank" class="contact-card bg-white rounded-3xl p-8 lg:p-10 shadow-sm flex flex-col justify-center hover:bg-slate-50 min-h-[160px]">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Insight Archive</p>
+                <p class="text-lg font-bold text-slate-900">@archive.data_</p>
+                <p class="text-[9px] text-primary mt-1 font-bold italic tracking-wider">Engineering Study Journal</p>
+            </a>
+
+        </div>
+    </main>
+</body>
+</html>

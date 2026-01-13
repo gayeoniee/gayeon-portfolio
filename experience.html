@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Experience | Hong Gayeon</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { "primary": "#3f8857", "point": "#f97316", "bg-light": "#fdfdfc" }, fontFamily: { "display": ["Manrope", "sans-serif"] } } }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Manrope', sans-serif; letter-spacing: -0.015em; word-break: keep-all; }
+        
+        /* 아코디언 애니메이션 최적화 */
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease; opacity: 0; }
+        .accordion-item.active .accordion-content { max-height: 800px; opacity: 1; padding-top: 1.5rem; }
+        .accordion-item.active .toggle-icon { transform: rotate(180deg); color: #3f8857; }
+        .accordion-item.active .card-container { border-color: #3f8857; box-shadow: 0 4px 20px -2px rgba(63, 136, 87, 0.1); }
+
+        /* 수직 타임라인 선 */
+        .timeline-line { position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #3f8857 0%, #eaf0ec 100%); }
+    </style>
+</head>
+<body class="bg-bg-light text-[#111713] antialiased">
+    <header class="sticky top-0 z-50 flex items-center justify-between border-b border-[#eaf0ec] bg-white/80 backdrop-blur-md px-10 py-3 lg:px-40">
+        <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center size-9 rounded-lg bg-primary/10 text-primary"><span class="material-symbols-outlined text-lg">eco</span></div>
+            <h2 class="text-lg font-extrabold tracking-tight">Hong Gayeon</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase">
+            <a class="hover:text-primary transition-colors" href="index.html">Intro</a>
+            <a class="text-primary border-b-2 border-primary pb-1" href="experience.html">Experience</a>
+            <a class="hover:text-primary transition-colors" href="projects.html">Project</a>
+            <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        </nav>
+        <button class="bg-primary text-white px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm">Resume</button>
+    </header>
+
+    <main class="px-6 lg:px-40 py-12 lg:py-20 max-w-[1100px] mx-auto w-full">
+        <header class="mb-16">
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 bg-primary/10 text-primary rounded-full w-fit text-[10px] font-bold uppercase tracking-widest mb-4">
+                <span class="material-symbols-outlined text-[14px]">potted_plant</span> Professional Journey
+            </div>
+            <h1 class="text-3xl lg:text-5xl font-black tracking-tight text-slate-900">Experience & Milestones</h1>
+        </header>
+
+        <div class="relative pl-10">
+            <div class="timeline-line"></div>
+
+            <div class="flex flex-col gap-6">
+                
+                <div class="accordion-item active relative group">
+                    <div class="absolute -left-[34px] top-7 size-4 rounded-full bg-primary border-4 border-white shadow-sm z-10 animate-pulse"></div>
+                    
+                    <div class="card-container bg-white border border-[#eaf0ec] rounded-2xl p-6 lg:p-8 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center gap-3">
+                                    <h3 class="text-xl font-extrabold text-slate-900">Product Manager 양성과정</h3>
+                                    <span class="px-2 py-0.5 bg-primary/10 text-primary text-[9px] font-bold rounded uppercase">Current</span>
+                                </div>
+                                <p class="text-slate-400 font-bold text-sm">기획 및 비즈니스 리서치</p>
+                            </div>
+                            <div class="flex items-center gap-4 text-slate-400">
+                                <div class="text-right hidden lg:block">
+                                    <p class="text-xs font-bold uppercase tracking-wider">2025.12 - Recent</p>
+                                    <p class="text-[10px]">Product Planning</p>
+                                </div>
+                                <span class="material-symbols-outlined toggle-icon transition-transform">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-content">
+                            <div class="border-t border-[#f0f4f1] pt-6 flex flex-col gap-5">
+                                <ul class="flex flex-col gap-3">
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        시장 분석과 유저 인터뷰를 통해 서비스의 가설을 설정하고 비즈니스 모델(BM)을 설계했습니다.
+                                    </li>
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        개발 전 Design Sprint를 도입하여 아이디어의 법적 제약사항과 기술적 타당성을 검토했습니다.
+                                    </li>
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        'DeliData' 프로젝트를 통해 데이터 실시간성 유지 비용 등 지속 가능한 서비스 구조를 연구했습니다.
+                                    </li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">Market Analysis</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">Design Sprint</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">DeliData</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative group">
+                    <div class="absolute -left-[34px] top-7 size-4 rounded-full bg-slate-200 border-4 border-white shadow-sm z-10 group-hover:bg-primary transition-colors"></div>
+                    
+                    <div class="card-container bg-white border border-[#eaf0ec] rounded-2xl p-6 lg:p-8 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-xl font-extrabold text-slate-900">LG U+ Whynot SW Camp 7기</h3>
+                                <p class="text-slate-400 font-bold text-sm">Full-Stack Development</p>
+                            </div>
+                            <div class="flex items-center gap-4 text-slate-400">
+                                <div class="text-right hidden lg:block">
+                                    <p class="text-xs font-bold uppercase tracking-wider">2025.05 - 2025.11</p>
+                                </div>
+                                <span class="material-symbols-outlined toggle-icon transition-transform">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-content">
+                            <div class="border-t border-[#f0f4f1] pt-6 flex flex-col gap-5">
+                                <ul class="flex flex-col gap-3">
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        <strong>Tooktook (RAG 아키텍처 설계):</strong> 데이터 파이프라인 구축 및 답변 정확도 향상을 위한 문단 단위 청킹 전략을 도입했습니다.
+                                    </li>
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        <strong>COOKUS (CI/CD 최적화):</strong> Docker와 GitHub Actions 기반 배포 자동화로 소요 시간을 20분에서 3분으로 단축했습니다.
+                                    </li>
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        레시피 데이터 구조 파악을 통해 RAG 대신 필터링 방식을 제안하여 시스템 경량화와 속도를 확보했습니다.
+                                    </li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">RAG</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">CI/CD</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">Docker</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">FastAPI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item relative group">
+                    <div class="absolute -left-[34px] top-7 size-4 rounded-full bg-slate-200 border-4 border-white shadow-sm z-10 group-hover:bg-primary transition-colors"></div>
+                    
+                    <div class="card-container bg-white border border-[#eaf0ec] rounded-2xl p-6 lg:p-8 transition-all cursor-pointer" onclick="location.href='#'; toggleAccordion(this)">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center gap-3">
+                                    <h3 class="text-xl font-extrabold text-slate-900">교내 AI 경진대회</h3>
+                                    <span class="px-2 py-0.5 bg-point/10 text-point text-[9px] font-bold rounded uppercase">최우수상</span>
+                                </div>
+                                <p class="text-slate-400 font-bold text-sm">Deep Learning Image Classification</p>
+                            </div>
+                            <div class="flex items-center gap-4 text-slate-400">
+                                <div class="text-right hidden lg:block">
+                                    <p class="text-xs font-bold uppercase tracking-wider">2025.12</p>
+                                </div>
+                                <span class="material-symbols-outlined toggle-icon transition-transform">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="accordion-content">
+                            <div class="border-t border-[#f0f4f1] pt-6 flex flex-col gap-5">
+                                <ul class="flex flex-col gap-3">
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        사과 병해충 이미지 데이터셋을 활용하여 최종 정확도 <strong>0.982</strong>를 달성했습니다.
+                                    </li>
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        3개 모델 앙상블 기법과 리더 모델을 보완하는 <strong>부활 로직(Revival Logic)</strong>을 직접 고안했습니다.
+                                    </li>
+                                    <li class="flex items-start gap-3 text-[15px] text-slate-600 leading-relaxed">
+                                        <span class="material-symbols-outlined text-primary text-base pt-1">check_circle</span>
+                                        실제 농가 현장에서 사용 가능한 수준의 신뢰도를 확보하며 기술적 한계를 돌파했습니다.
+                                    </li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">Ensemble</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">Computer Vision</span>
+                                    <span class="px-3 py-1 bg-[#f8faf9] text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">PyTorch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+            
+            if (!isActive) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
