@@ -12,13 +12,12 @@
         }
     </script>
     <style>
+        /* 프로젝트 아코디언 인터랙션 */
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
         body { font-family: 'Manrope', sans-serif; letter-spacing: -0.015em; word-break: keep-all; }
-        
-        /* 프로젝트 아코디언 인터랙션 */
         .accordion-content { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .accordion-item.active .accordion-content { max-height: 1200px; opacity: 1; padding-top: 2rem; }
-        .accordion-item.active .card-box { border-color: #3f8857; background: white; box-shadow: 0 15px 30px -10px rgba(63, 136, 87, 0.15); }
+        .accordion-item.active .accordion-content { max-height: 2500px; opacity: 1; padding-top: 2.5rem; }
+        .accordion-item.active .card-box { border-color: #3f8857; background: white; box-shadow: 0 20px 40px -15px rgba(63, 136, 87, 0.1); }
         .accordion-item.active .toggle-icon { transform: rotate(180deg); color: #3f8857; }
     </style>
 </head>
@@ -42,40 +41,55 @@
             <div class="inline-flex items-center gap-2 px-2.5 py-0.5 bg-primary/10 text-primary rounded-full w-fit text-[10px] font-bold uppercase tracking-widest mb-4">
                 <span class="material-symbols-outlined text-[14px]">rocket_launch</span> Selected Works
             </div>
-            <h1 class="text-3xl lg:text-5xl font-black tracking-tight text-slate-900 italic">
-                Engineering <span class="text-primary">Logic & Muscles.</span>
-            </h1>
+            <h1 class="text-3xl lg:text-5xl font-black tracking-tight text-slate-900 mb-4">Selected Engineering <br/>Works & Experiments.</h1>
+            <p class="text-[#62846d] text-sm lg:text-base font-medium max-w-[600px]">핵심 프로젝트 컬렉션입니다.</p>
         </header>
 
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-8">
             
             <div class="accordion-item active group">
-                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-3">
-                                <h3 class="text-2xl font-black text-slate-900">COOKUS: 프로젝트 리더</h3>
-                                <span class="px-2.5 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase">Leadership</span>
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-[40px] p-8 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6">
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-2xl lg:text-3xl font-black text-slate-900">COOKUS</h3>
+                                <p class="text-slate-400 font-bold text-sm">Frontend Lead & DevOps Optimization</p>
                             </div>
-                            <p class="text-slate-400 font-bold text-sm tracking-tight">Full-Stack Development & CI/CD Optimization</p>
+                            <a href="https://github.com/geonjeonji-labs" target="_blank" onclick="event.stopPropagation()" class="flex items-center justify-center size-10 rounded-xl bg-slate-100 text-slate-600 hover:bg-primary hover:text-white transition-all shadow-sm">
+                                <span class="material-symbols-outlined text-xl">terminal</span>
+                            </a>
                         </div>
-                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                        <span class="material-symbols-outlined toggle-icon text-3xl text-slate-300 transition-transform">expand_more</span>
                     </div>
-
                     <div class="accordion-content">
-                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
-                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] shadow-sm">
-                                <img src="docs/cookus.png" alt="COOKUS" class="w-full h-auto object-cover">
+                        <div class="bg-primary/5 rounded-3xl p-6 mb-10 border-l-4 border-primary">
+                            <h4 class="text-sm font-black text-primary uppercase mb-2">Why this Project?</h4>
+                            <p class="text-slate-700 font-bold">"이것저것 다 해보고 싶은 호기심을 기술적 오너십으로 바꾼 첫 시도입니다." 냉장고 속 재료라는 일상의 데이터를 유저에게 유용한 가치로 전환하고, 배포 프로세스 전체를 완벽히 장악해보고자 시작했습니다.</p>
+                        </div>
+                        
+                        <div class="grid lg:grid-cols-2 gap-16 border-t border-slate-100 pt-10">
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">01. Architecture</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">데이터의 구조를 면밀히 분석하여 무거운 RAG 대신 Filtering + Context Injection 방식을 채택했습니다. 시스템 부하를 줄이면서도 정확도를 높인 효율적인 설계를 구현했습니다.</p>
+                                <img src="docs/cookus.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="COOKUS Architecture">
                             </div>
                             <div class="flex flex-col gap-6">
-                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
-                                    Project Lead로서 팀의 방향성을 제시하고, <strong>프론트엔드 전체 개발</strong>부터 <strong>CI/CD 자동화 구축</strong>까지 제품의 전 생애주기를 직접 책임졌습니다. 
-                                    Docker와 GitHub Actions를 활용해 기존 20분 이상의 배포 시간을 3분으로 단축하여 개발 생산성을 85% 이상 개선했습니다.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#Frontend_Lead</span>
-                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#CI/CD_Automation</span>
-                                </div>
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">02. DevOps</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">Docker와 GitHub Actions를 도입해 빌드부터 배포까지의 모든 과정을 자동화했습니다. 수동 배포의 번거로움을 해결하고 배포 시간을 20분에서 3분으로 85% 단축했습니다.</p>
+                                <img src="docs/solution.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="DevOps Solution">
+                            </div>
+                        </div>
+
+                        <div class="mt-12 pt-8 border-t border-slate-100">
+                            <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Engineering Stack</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Python</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">React</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">FastAPI</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">OpenAI</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Docker</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">GitHub Actions</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">AWS EC2/ECR/S3</span>
                             </div>
                         </div>
                     </div>
@@ -83,32 +97,43 @@
             </div>
 
             <div class="accordion-item group">
-                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-3">
-                                <h3 class="text-2xl font-black text-slate-900">사과 병해충 분류 모델링</h3>
-                                <span class="px-2.5 py-0.5 bg-point/10 text-point text-[10px] font-bold rounded-full uppercase">Grand Prize</span>
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-[40px] p-8 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6">
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-2xl lg:text-3xl font-black text-slate-900">Tooktook</h3>
+                                <p class="text-slate-400 font-bold text-sm">AI Researcher & Architect</p>
                             </div>
-                            <p class="text-slate-400 font-bold text-sm tracking-tight">Deep Learning & Computer Vision</p>
+                            <a href="https://github.com/gayeoniee/Tooktook_personal" target="_blank" onclick="event.stopPropagation()" class="flex items-center justify-center size-10 rounded-xl bg-slate-100 text-slate-600 hover:bg-primary hover:text-white transition-all shadow-sm">
+                                <span class="material-symbols-outlined text-xl">terminal</span>
+                            </a>
                         </div>
-                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                        <span class="material-symbols-outlined toggle-icon text-3xl text-slate-300 transition-transform">expand_more</span>
                     </div>
-
                     <div class="accordion-content">
-                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
-                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] shadow-sm bg-slate-900">
-                                <img src="docs/ai.png" alt="Apple AI" class="w-full h-auto object-cover opacity-90">
+                        <div class="bg-primary/5 rounded-3xl p-6 mb-10 border-l-4 border-primary">
+                            <h4 class="text-sm font-black text-primary uppercase mb-2">Why this Project?</h4>
+                            <p class="text-slate-700 font-bold">수시로 개정되는 정책 데이터를 상담사가 실시간으로 파악하지 못해 발생하는 비효율을 목격했습니다. 기술로 이 정보의 격차를 해소하고 최신 데이터를 즉시 답변에 반영하는 구조를 만들고자 했습니다.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-16 border-t border-slate-100 pt-10">
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">01. Architect</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">재학습 비용이 높은 Fine-tuning의 한계를 넘기 위해 RAG 아키텍처를 제안했습니다. 기획적 가설을 기술적 실체로 구현해내는 전 과정을 리드했습니다.</p>
+                                <img src="docs/tooktook.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="Tooktook Architecture">
                             </div>
                             <div class="flex flex-col gap-6">
-                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
-                                    노이즈가 심한 사과 병해충 이미지 데이터셋에서 <strong>최종 정확도 0.982</strong>를 달성하여 교내 AI 경진대회 최우수상을 수상했습니다. 
-                                    3개 모델의 앙상블 기법과 리더 모델을 보완하는 독자적인 <strong>부활 로직(Revival Logic)</strong>을 직접 고안하여 기술적 한계를 극복했습니다.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#Ensemble</span>
-                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#PyTorch</span>
-                                </div>
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">02. Engineering</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">단순 길이 기반의 파싱이 아닌 문단 및 헤더 단위의 Context-Aware Chunking 전략을 설계하여 상담 답변의 신뢰도를 극대화했습니다.</p>
+                                <img src="docs/tooktookdata.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="Data Engineering">
+                            </div>
+                        </div>
+                        <div class="mt-12 pt-8 border-t border-slate-100">
+                            <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Engineering Stack</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Python</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">LangChain</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Vector DB</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">FastAPI</span>
                             </div>
                         </div>
                     </div>
@@ -116,28 +141,45 @@
             </div>
 
             <div class="accordion-item group">
-                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                        <div class="flex flex-col gap-2">
-                            <h3 class="text-2xl font-black text-slate-900">Tooktook: 지능형 상담 지원</h3>
-                            <p class="text-slate-400 font-bold text-sm tracking-tight">RAG Architecture & Data Engineering</p>
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-[40px] p-8 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6">
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-2xl lg:text-3xl font-black text-slate-900">Wine Sommelier</h3>
+                                <p class="text-slate-400 font-bold text-sm">Intelligent Agent RAG Development</p>
+                            </div>
+                            <a href="https://github.com/gayeoniee" target="_blank" onclick="event.stopPropagation()" class="flex items-center justify-center size-10 rounded-xl bg-slate-100 text-slate-600 hover:bg-primary hover:text-white transition-all shadow-sm">
+                                <span class="material-symbols-outlined text-xl">terminal</span>
+                            </a>
                         </div>
-                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                        <span class="material-symbols-outlined toggle-icon text-3xl text-slate-300 transition-transform">expand_more</span>
                     </div>
                     <div class="accordion-content">
-                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
-                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] bg-[#f8faf9] p-4">
-                                <img src="docs/tooktook.png" alt="Tooktook" class="w-full h-auto object-contain">
+                        <div class="bg-primary/5 rounded-3xl p-6 mb-10 border-l-4 border-primary">
+                            <h4 class="text-sm font-black text-primary uppercase mb-2">Why this Project?</h4>
+                            <p class="text-slate-700 font-bold">"달지 않은 와인"처럼 모호한 사용자 언어를 정교한 데이터 쿼리로 변환하는 과정에 흥미를 느꼈습니다. 추상적인 취향을 기술적으로 해석해내는 통역가로서의 가능성을 확인한 프로젝트입니다.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-16 border-t border-slate-100 pt-10">
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">01. Data Engineering</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">72,000건의 리뷰 데이터에서 NLP를 통해 맛 키워드를 추출했습니다. 평점 88점 이상의 데이터를 선별해 추천 시스템의 근간이 되는 데이터 품질을 확보했습니다.</p>
+                                <img src="docs/wine.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="Wine Data Engineering">
                             </div>
                             <div class="flex flex-col gap-6">
-                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
-                                    수시로 개정되는 정책 데이터를 실시간으로 수집하는 파이프라인을 구축하고, 답변 정확도를 높이기 위한 <strong>문단 단위 청킹 전략</strong>을 직접 설계했습니다. 
-                                    RAG 아키텍처의 효용성을 입증하며 실제 상담 현장에서의 기술적 의사결정 최적화를 이뤄냈습니다.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#RAG</span>
-                                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[11px] font-bold rounded-lg border border-[#eaf0ec]">#Data_Pipeline</span>
-                                </div>
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">02. Logic Solving</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">벡터 검색의 한계를 넘기 위해 Self-Querying Retriever를 도입했습니다. 자연어 질문을 100% 논리적인 메타데이터 필터링으로 자동 변환해 오검색 문제를 해결했습니다.</p>
+                                <img src="docs/query.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="Logic Solution">
+                            </div>
+                        </div>
+                        <div class="mt-12 pt-8 border-t border-slate-100">
+                            <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Engineering Stack</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">RAG</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Python</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">OpenAI API</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Pinecone</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">NLP</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">LangChain</span>
                             </div>
                         </div>
                     </div>
@@ -145,27 +187,81 @@
             </div>
 
             <div class="accordion-item group">
-                <div class="card-box bg-white border border-[#eaf0ec] rounded-3xl p-6 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
-                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                        <div class="flex flex-col gap-2">
-                            <h3 class="text-2xl font-black text-slate-900">Agentic RAG 와인 추천</h3>
-                            <p class="text-slate-400 font-bold text-sm tracking-tight">Personalization & AI Agent Design</p>
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-[40px] p-8 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-6">
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-center gap-3">
+                                    <h3 class="text-2xl lg:text-3xl font-black text-slate-900">Apple Disease AI</h3>
+                                    <span class="px-3 py-1 bg-point text-white text-[9px] font-bold rounded-full uppercase tracking-tighter shadow-sm">최우수상</span>
+                                </div>
+                                <p class="text-slate-400 font-bold text-sm">Deep Learning & Computer Vision Modeling</p>
+                            </div>
                         </div>
-                        <span class="material-symbols-outlined toggle-icon transition-transform text-slate-300">expand_more</span>
+                        <span class="material-symbols-outlined toggle-icon text-3xl text-slate-300 transition-transform">expand_more</span>
                     </div>
                     <div class="accordion-content">
-                        <div class="grid lg:grid-cols-2 gap-10 items-center border-t border-[#f0f4f1] pt-10">
-                            <div class="rounded-2xl overflow-hidden border border-[#eaf0ec] shadow-sm">
-                                <img src="docs/wine.png" alt="Wine" class="w-full h-auto object-cover">
+                        <div class="bg-primary/5 rounded-3xl p-6 mb-10 border-l-4 border-primary">
+                            <h4 class="text-sm font-black text-primary uppercase mb-2">Why this Project?</h4>
+                            <p class="text-slate-700 font-bold">노이즈 가득한 현장의 데이터에서 진정한 해답을 찾아내고 싶었습니다. 작은 병변 하나도 놓치지 않으려는 집요함이 실제 농가에 어떤 도움을 줄 수 있을지 고민하며 모델링에 몰입했습니다.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-16 border-t border-slate-100 pt-10">
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">01. Analysis</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">최종 정확도 0.982 달성. 데이터 증강 전략과 모델 확장을 통해 단일 모델이 가진 기술적 임계를 돌파하는 성능을 확보했습니다.</p>
+                                <img src="docs/ai.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="AI Performance">
                             </div>
                             <div class="flex flex-col gap-6">
-                                <p class="text-slate-600 text-[16px] leading-relaxed font-medium">
-                                    사용자의 모호한 취향 데이터를 기반으로 최적의 와인을 제안하는 <strong>에이전틱 RAG 기반 개인화 추천 시스템</strong>입니다. 
-                                    사용자 피드백을 실시간으로 반영하여 추천의 정교함을 높이는 로직을 설계했습니다.
-                                </p>
-                                <div class="flex flex-wrap gap-2 text-primary font-bold text-[11px]">
-                                    #Personalization #LLM_Agent
-                                </div>
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">02. Innovation</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">3개 모델의 앙상블에 독자적인 부활(Revival) 로직을 설계했습니다. 리더 모델의 오류를 고해상도 모델이 보완하는 구조로 실제 농가 투입이 가능한 수준의 신뢰도를 확보했습니다.</p>
+                                <img src="docs/apple_ai_logic.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="Revival Logic">
+                            </div>
+                        </div>
+                        <div class="mt-12 pt-8 border-t border-slate-100">
+                            <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Engineering Stack</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">PyTorch</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">TensorFlow</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Ensemble Modeling</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Revival Logic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item group">
+                <div class="card-box bg-white border border-[#eaf0ec] rounded-[40px] p-8 lg:p-10 transition-all cursor-pointer" onclick="toggleAccordion(this)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-2xl lg:text-3xl font-black text-slate-900">DeliData</h3>
+                            <p class="text-slate-400 font-bold text-sm">Design Sprint & Feasibility Test</p>
+                        </div>
+                        <span class="material-symbols-outlined toggle-icon text-3xl text-slate-300 transition-transform">expand_more</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="bg-primary/5 rounded-3xl p-6 mb-10 border-l-4 border-primary">
+                            <h4 class="text-sm font-black text-primary uppercase mb-2">Why this Project?</h4>
+                            <p class="text-slate-700 font-bold">"검증 없는 개발은 도박이다." 코드를 쓰기 전, 아이디어의 실현 가능성을 먼저 묻는 태도를 배웠습니다. 기술적 제약을 미리 파악해 프로젝트의 지속 가능성을 판단하는 안목을 길렀습니다.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-16 border-t border-slate-100 pt-10">
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">01. Validation</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">Design Sprint를 통해 플랫폼별 API 약관과 실시간 데이터 수집 가능성을 검토했습니다. 가설을 세우고 빠르게 실패하며 배움을 얻는 과정을 경험했습니다.</p>
+                                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 italic text-slate-500 text-sm">가설: "배달 앱별 가격 비교 서비스가 유용할 것이다"</div>
+                            </div>
+                            <div class="flex flex-col gap-6">
+                                <h4 class="text-xl font-black text-primary uppercase tracking-tighter">02. Learning</h4>
+                                <p class="text-slate-600 leading-relaxed font-medium">Fail Fast, Learn Faster. 데이터 유지 비용과 법적 제약사항을 최우선으로 테스트하여 프로젝트의 기술적 타당성을 냉철하게 도출해냈습니다.</p>
+                                <img src="docs/delidata.png" class="rounded-2xl border border-slate-100 shadow-sm" alt="DeliData Analysis">
+                            </div>
+                        </div>
+                        <div class="mt-12 pt-8 border-t border-slate-100">
+                            <p class="text-[10px] font-black text-slate-400 uppercase mb-4 tracking-widest">Engineering Stack</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Design Sprint</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Market Research</span>
+                                <span class="px-4 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">Figma</span>
                             </div>
                         </div>
                     </div>
